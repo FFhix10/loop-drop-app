@@ -14,7 +14,9 @@
   "scripts": {
     "start": "node scripts/start",
     "postinstall": "npm run rebuild",
-    "rebuild": "electron-rebuild -f -w abletonlink"
+    "rebuild": "electron-rebuild -f -w abletonlink",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "bin": {
     "loop-drop": "scripts/start.js"
@@ -64,10 +66,12 @@
     "wav": "~1.0.1",
     "wave-recorder": "^2.3.0",
     "web-midi": "^2.1.0",
-    "xtend": "^4.0.1"
+    "xtend": "^4.0.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "electron": "~10.4.4",
     "electron-rebuild": "^1.6.0"
-  }
+  },
+  "snyk": true
 }
